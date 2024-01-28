@@ -1,95 +1,56 @@
-# Serverless - AWS Node.js Typescript
+# MintableLite
 
-This project has been generated using the `aws-nodejs-typescript` template from the [Serverless framework](https://www.serverless.com/).
+## Getting Started
 
-For detailed instructions, please refer to the [documentation](https://www.serverless.com/framework/docs/providers/aws/).
+It is essential to possess an AWS account for the successful setup of the project. Additionally, please ensure that your AWS Identity and Access Management (IAM) account is allowed with the requisite permissions for DynamoDB, S3, Lambda Functions, API Gateway, Cognito, and CloudFormation. For more [documentation..](mintablelite-api\docs\documentation.md)
 
-## Installation/deployment instructions
+### Install & Setup AWS resources
 
-Depending on your preferred package manager, follow the instructions below to deploy your project.
+1. Install and Setup AWS-CLI
 
-> **Requirements**: NodeJS `lts/fermium (v.14.15.0)`. If you're using [nvm](https://github.com/nvm-sh/nvm), run `nvm use` to ensure you're using the same Node version in local and in your lambda's runtime.
+2. Configure AWS in command Line
+    ```
+    aws configure
+    ```
 
-### Using NPM
+3. Install serverless
+    ```
+    npm i -g serverless
+    ```
 
-- Run `npm i` to install the project dependencies
-- Run `npx sls deploy` to deploy this stack to AWS
+4. Clone this repo to your local machine:
+    ```
+    git clone https://github.com/SuNandarLin/mintablelite.git
+    ```
 
-### Using Yarn
+5. Install the required dependencies:
+    ```
+    npm install
+    ```
 
-- Run `yarn` to install the project dependencies
-- Run `yarn sls deploy` to deploy this stack to AWS
+6. Deploy using CloudFormation, running serverless deploy command:
+    ```
+    serverless deploy --region REGION
+    ```
 
-## Test your service
+    Now All AWS resources are created and set up. Endpoints are generated. You will be able to see the result in terminal if you scucceed deploying.
+    ![Alt text](deployment-result.png)
 
-This template contains a single lambda function triggered by an HTTP request made on the provisioned API Gateway REST API `/hello` route with `POST` method. The request body must be provided as `application/json`. The body structure is tested by API Gateway against `src/functions/hello/schema.ts` JSON-Schema definition: it must contain the `name` property.
+### Executing API endpoints
 
-- requesting any other path than `/hello` with any other method than `POST` will result in API Gateway returning a `403` HTTP error code
-- sending a `POST` request to `/hello` with a payload **not** containing a string property named `name` will result in API Gateway returning a `400` HTTP error code
-- sending a `POST` request to `/hello` with a payload containing a string property named `name` will result in API Gateway returning a `200` HTTP status code with a message saluting the provided name and the detailed event processed by the lambda
+To be able to execute API secured with Cognito, a Cognito User is necessary to authenticate. 
 
-> :warning: As is, this template, once deployed, opens a **public** endpoint within your AWS account resources. Anybody with the URL can actively execute the API Gateway endpoint and the corresponding lambda. You should protect this endpoint with the authentication method of your choice.
+1. Create a user in user pool using email as username and password with 6 minimum characters.
 
-### Locally
+2. To confirm user status, run aws-cognito-idp command
+    ```
+    aws cognito-idp admin-set-user-password --user-pool-id USER_POOL_ID --username USER_NAME --password PASSWORD --permanent
+    ```
 
-In order to test the hello function locally, run the following command:
+3. Generate token to authenticate
+    ```
+    aws cognito-idp initiate-auth --auth-flow USER_PASSWORD_AUTH --auth-parameters USERNAME=USER_NAME,PASSWORD=PASSWORD --client-id CLIENT_ID --region REGION
+    ```
+4. COPY the idToken from result and use as a Bearer Token to authenticate in executing secure APIs
 
-- `npx sls invoke local -f hello --path src/functions/hello/mock.json` if you're using NPM
-- `yarn sls invoke local -f hello --path src/functions/hello/mock.json` if you're using Yarn
-
-Check the [sls invoke local command documentation](https://www.serverless.com/framework/docs/providers/aws/cli-reference/invoke-local/) for more information.
-
-### Remotely
-
-Copy and replace your `url` - found in Serverless `deploy` command output - and `name` parameter in the following `curl` command in your terminal or in Postman to test your newly deployed application.
-
-```
-curl --location --request POST 'https://myApiEndpoint/dev/hello' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "name": "Frederic"
-}'
-```
-
-## Template features
-
-### Project structure
-
-The project code base is mainly located within the `src` folder. This folder is divided in:
-
-- `functions` - containing code base and configuration for your lambda functions
-- `libs` - containing shared code base between your lambdas
-
-```
-.
-├── src
-│   ├── functions               # Lambda configuration and source code folder
-│   │   ├── hello
-│   │   │   ├── handler.ts      # `Hello` lambda source code
-│   │   │   ├── index.ts        # `Hello` lambda Serverless configuration
-│   │   │   ├── mock.json       # `Hello` lambda input parameter, if any, for local invocation
-│   │   │   └── schema.ts       # `Hello` lambda input event JSON-Schema
-│   │   │
-│   │   └── index.ts            # Import/export of all lambda configurations
-│   │
-│   └── libs                    # Lambda shared code
-│       └── apiGateway.ts       # API Gateway specific helpers
-│       └── handlerResolver.ts  # Sharable library for resolving lambda handlers
-│       └── lambda.ts           # Lambda middleware
-│
-├── package.json
-├── serverless.ts               # Serverless service file
-├── tsconfig.json               # Typescript compiler configuration
-├── tsconfig.paths.json         # Typescript paths
-└── webpack.config.js           # Webpack configuration
-```
-
-### 3rd party libraries
-
-- [json-schema-to-ts](https://github.com/ThomasAribart/json-schema-to-ts) - uses JSON-Schema definitions used by API Gateway for HTTP request validation to statically generate TypeScript types in your lambda's handler code base
-- [middy](https://github.com/middyjs/middy) - middleware engine for Node.Js lambda. This template uses [http-json-body-parser](https://github.com/middyjs/middy/tree/master/packages/http-json-body-parser) to convert API Gateway `event.body` property, originally passed as a stringified JSON, to its corresponding parsed object
-- [@serverless/typescript](https://github.com/serverless/typescript) - provides up-to-date TypeScript definitions for your `serverless.ts` service file
-
-### Advanced usage
-
-Any tsconfig.json can be used, but if you do, set the environment variable `TS_NODE_CONFIG` for building the application, eg `TS_NODE_CONFIG=./tsconfig.app.json npx serverless webpack`
+5. Execute APIs referring to the [API documentation](/mintablelite-api\docs\MintableLite-API.postman_collection.json)

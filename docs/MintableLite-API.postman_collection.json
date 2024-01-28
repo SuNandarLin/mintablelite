@@ -1,0 +1,665 @@
+{
+	"info": {
+		"_postman_id": "0e200c16-bf0a-4bd4-bbe4-c00f258ef346",
+		"name": "MintableLite-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateAndMintItem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJraWQiOiJ5eTZVRUJwU01JdWxWVWE5d2FSRFJQUzJ5ZFcrc2xTblRQWEpsaFhFdUdzPSIsImFsZyI6IlJTMjU2In0.eyJvcmlnaW5fanRpIjoiYmZjNmUwNTktZDIwMS00OTI2LWFkZGEtMzQzYmUyMTBkZTliIiwic3ViIjoiZjJkNzdkMDgtOTVhMi00NjE2LWIzZjItNzc5YTI1YjQ0M2NkIiwiYXVkIjoiMzRhM3FvdnY4MzJ1ZmdqdTUxMGxkNGgwZWUiLCJldmVudF9pZCI6ImQyZTBhZGE0LTRjZTctNGIzMi04ZDE5LWNkYjYzNWJkNzViMiIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNzA2NDIzOTY0LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTFfZFhvRnVNOGEzIiwiY29nbml0bzp1c2VybmFtZSI6ImhzdW5hbmRhci5saW5uOThAZ21haWwuY29tIiwiZXhwIjoxNzA2NDQxOTY0LCJpYXQiOjE3MDY0MjM5NjQsImp0aSI6IjM3M2U3MGUxLWVkNmItNGU2My1hMGFiLTIxNTFlNGNjMTI3OSJ9.DP5tJjWLR6rZbVlbRAMT7SdRGaxRSgC5Y-xQu5UgD2XhwglMeOByZyl70mwPBwb1j3P6vYGgOMCC3c3RWTR4CU496LXBYBr3ba2d4h6cCjR-dO7ZRuUAAdT1wlqEkXX2Wewpe9mRpRMzKMsbiTmS9__LO6_5IbgGDwXei3eAo53k7WFrmY2NtzY7dbw_RiBAC7GUR1fy2jnWH7_2dE_nGhb71kDtF3abhM--swl2HRwtJNJUq1tMgjfA4V81XwtrhMtRJrptWe3vKMGOEEen22fPr_SdIYh-9U9SUxfWr-rHuBQVOBCzwXJ9gd6gXk9h0LJodhiQNYR1nF7_eip7UQ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"my-doodle-art\",\r\n    \"image\": \"url/to/my-doodle-art\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}mintableitem/mint",
+					"host": [
+						"{{url}}mintableitem"
+					],
+					"path": [
+						"mint"
+					]
+				},
+				"description": "Mint item and Save new item in Database \r\n(if itemId is keyed in, the API will mint an existing item)"
+			},
+			"response": [
+				{
+					"name": "CreateAndMintItem",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJ5eTZVRUJwU01JdWxWVWE5d2FSRFJQUzJ5ZFcrc2xTblRQWEpsaFhFdUdzPSIsImFsZyI6IlJTMjU2In0.eyJvcmlnaW5fanRpIjoiYmZjNmUwNTktZDIwMS00OTI2LWFkZGEtMzQzYmUyMTBkZTliIiwic3ViIjoiZjJkNzdkMDgtOTVhMi00NjE2LWIzZjItNzc5YTI1YjQ0M2NkIiwiYXVkIjoiMzRhM3FvdnY4MzJ1ZmdqdTUxMGxkNGgwZWUiLCJldmVudF9pZCI6ImQyZTBhZGE0LTRjZTctNGIzMi04ZDE5LWNkYjYzNWJkNzViMiIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNzA2NDIzOTY0LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTFfZFhvRnVNOGEzIiwiY29nbml0bzp1c2VybmFtZSI6ImhzdW5hbmRhci5saW5uOThAZ21haWwuY29tIiwiZXhwIjoxNzA2NDQxOTY0LCJpYXQiOjE3MDY0MjM5NjQsImp0aSI6IjM3M2U3MGUxLWVkNmItNGU2My1hMGFiLTIxNTFlNGNjMTI3OSJ9.DP5tJjWLR6rZbVlbRAMT7SdRGaxRSgC5Y-xQu5UgD2XhwglMeOByZyl70mwPBwb1j3P6vYGgOMCC3c3RWTR4CU496LXBYBr3ba2d4h6cCjR-dO7ZRuUAAdT1wlqEkXX2Wewpe9mRpRMzKMsbiTmS9__LO6_5IbgGDwXei3eAo53k7WFrmY2NtzY7dbw_RiBAC7GUR1fy2jnWH7_2dE_nGhb71kDtF3abhM--swl2HRwtJNJUq1tMgjfA4V81XwtrhMtRJrptWe3vKMGOEEen22fPr_SdIYh-9U9SUxfWr-rHuBQVOBCzwXJ9gd6gXk9h0LJodhiQNYR1nF7_eip7UQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"my-doodle-art\",\r\n    \"image\": \"url/to/my-doodle-art\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}mintableitem/mint",
+							"host": [
+								"{{url}}mintableitem"
+							],
+							"path": [
+								"mint"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jan 2024 09:33:28 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "46745a7a-caaa-4990-9a23-8053defa8f87"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "SPnWKGH3SQ0EQDA="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-65b61f5a-7a7abb2342178448671c6c1f;Sampled=0;lineage=29a83f35:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 17da3580ac51ce2ae5123bc46728adb2.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "SIN2-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "PvIfkqjuZ4A9uRt2e_e8dEwW0h2T6KuoAs2UEE0F9lIE2ZBj7DW6eg=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mintableItem\": {\n        \"message\": \"Success creating and minting the item\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "CreateItem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"my-doodle-art-002\",\r\n    \"image\": \"url/to/my-doodle-art-002\",\r\n    \"description\": \"my creative doodle art\",\r\n    \"title\": \"DoodleCreative002\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}mintableitem",
+					"host": [
+						"{{url}}mintableitem"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateItem",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"my-doodle-art-002\",\r\n    \"image\": \"url/to/my-doodle-art-002\",\r\n    \"description\": \"my creative doodle art\",\r\n    \"title\": \"DoodleCreative002\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}mintableitem",
+							"host": [
+								"{{url}}mintableitem"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jan 2024 09:39:46 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "b0d7bddd-cfde-4586-9623-d678c2ae0b87"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "SPoTXEqwSQ0Ee9g="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-65b620e2-15f6310777d32a1828f88251;Sampled=0;lineage=462adae0:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "SIN2-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "hYLV26GcuG8hs_vI0EmtaNFhutx_mWgX1vE49lxVa_cDV9Zer50bPA=="
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{}"
+				}
+			]
+		},
+		{
+			"name": "MintItem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemId\": \"f4bd8240-a4a7-47d0-a2c7-9ba23624d085\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}mintableitem/mint",
+					"host": [
+						"{{url}}mintableitem"
+					],
+					"path": [
+						"mint"
+					]
+				},
+				"description": "Mint an existing item and save generated token"
+			},
+			"response": [
+				{
+					"name": "MintItem",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": \"f4bd8240-a4a7-47d0-a2c7-9ba23624d085\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}mintableitem/mint",
+							"host": [
+								"{{url}}mintableitem"
+							],
+							"path": [
+								"mint"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jan 2024 09:45:24 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "99f6aa91-c98e-409f-aa52-cd2852935876"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "SPpF-Eb8SQ0EX6w="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-65b62225-3f76434b0ae71fa85176cbed;Sampled=0;lineage=29a83f35:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "SIN2-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "2-bSRuTfe_I3UDCzbEXntZWgCirmZBOx4F1byfiucnZBlxsTyKG2Wg=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mintableItem\": {\n        \"message\": \"Success minting the item\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GetDetailsOfItem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}mintableitem/f4bd8240-a4a7-47d0-a2c7-9ba23624d085",
+					"host": [
+						"{{url}}mintableitem"
+					],
+					"path": [
+						"f4bd8240-a4a7-47d0-a2c7-9ba23624d085"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetDetailsOfItem",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}mintableitem/f4bd8240-a4a7-47d0-a2c7-9ba23624d085",
+							"host": [
+								"{{url}}mintableitem"
+							],
+							"path": [
+								"f4bd8240-a4a7-47d0-a2c7-9ba23624d085"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "401"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jan 2024 09:47:16 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "5a592185-a181-453a-8ea5-43a6f9ede424"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "SPpZpHuZSQ0EX6w="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-65b622a3-6c4210855471889f794f8c29;Sampled=0;lineage=c957611d:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "SIN2-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "SAHJTOajT9NycyK8PaNbiNEj16NP4Bk8KBYn6PWIs3Az1-HetVA8UQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mintableItem\": {\n        \"tokenId\": \"61567771252793809372274542839126069677458383736457437594407837511726795945328\",\n        \"image\": \"hsunandar.linn98@gmail.com\",\n        \"updatedAt\": \"2024-01-28T09:45:24.023Z\",\n        \"itemId\": \"f4bd8240-a4a7-47d0-a2c7-9ba23624d085\",\n        \"email\": \"hsunandar.linn98@gmail.com\",\n        \"name\": \"my-doodle-art-002\",\n        \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\"\n    },\n    \"id\": \"f4bd8240-a4a7-47d0-a2c7-9ba23624d085\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ListAllMintedItems",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}mintableitem",
+					"host": [
+						"{{url}}mintableitem"
+					]
+				},
+				"description": "Retrieve all minted items"
+			},
+			"response": [
+				{
+					"name": "ListAllMintedItems",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}mintableitem",
+							"host": [
+								"{{url}}mintableitem"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "485"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jan 2024 09:48:27 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "de168363-fd68-4947-8d5f-76b1dac7e2b2"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "SPpksH5MyQ0EYmg="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-65b622ea-2082119268b0e50648c5332f;Sampled=0;lineage=9fb1de06:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "SIN2-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "9oSIaIjmOBZmImEkfCekzfdCHdj77HkZ7QGyFrjR79wy-63lGo_vEQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mintableItems\": [\n        {\n            \"tokenId\": \"61567771252793809372274542839126069677458383736428098239844083095822846166889\",\n            \"image\": \"url/to/my-doodle\",\n            \"updatedAt\": \"2024-01-28T07:33:11.852Z\",\n            \"itemId\": \"e1a25ca0-375e-4530-bbe9-e0aff8699c88\",\n            \"description\": \"Creative doodle\",\n            \"email\": \"hsunandar.linn98@gmail.com\",\n            \"name\": \"my-doodle\",\n            \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\"\n        },\n        {\n            \"tokenId\": \"61567771252793809372274542839126069677458383736438397470241583267714781222420\",\n            \"updatedAt\": \"2024-01-28T09:33:28.484Z\",\n            \"createdAt\": \"2024-01-28T09:33:28.484Z\",\n            \"itemId\": \"0f6b2ace-4bf2-4483-acca-af744174e89a\",\n            \"email\": \"hsunandar.linn98@gmail.com\",\n            \"name\": \"my-doodle-art\",\n            \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\"\n        },\n        {\n            \"tokenId\": \"61567771252793809372274542839126069677458383736449235305086685358013478803299\",\n            \"updatedAt\": \"2024-01-28T09:22:30.038Z\",\n            \"createdAt\": \"2024-01-28T09:22:30.038Z\",\n            \"itemId\": \"bdb1ec4b-d766-404e-9c98-6ae4fc965333\",\n            \"email\": \"hsunandar.linn98@gmail.com\",\n            \"name\": \"my-doodle-2\",\n            \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\"\n        },\n        {\n            \"tokenId\": \"61567771252793809372274542839126069677458383736457437594407837511726795945328\",\n            \"image\": \"hsunandar.linn98@gmail.com\",\n            \"updatedAt\": \"2024-01-28T09:45:24.023Z\",\n            \"itemId\": \"f4bd8240-a4a7-47d0-a2c7-9ba23624d085\",\n            \"email\": \"hsunandar.linn98@gmail.com\",\n            \"name\": \"my-doodle-art-002\",\n            \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateMetaDataItem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"my-doodle-art-002\",\r\n    \"image\": \"url/to/my-doodle-art-002\",\r\n    \"description\": \"my creative doodle art 002\",\r\n    \"title\": \"DoodleCreative002\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}mintableitem/f4bd8240-a4a7-47d0-a2c7-9ba23624d085",
+					"host": [
+						"{{url}}mintableitem"
+					],
+					"path": [
+						"f4bd8240-a4a7-47d0-a2c7-9ba23624d085"
+					]
+				},
+				"description": "Checking if the token is authorized to the user and if it is authorized, meta data is updated"
+			},
+			"response": [
+				{
+					"name": "UpdateMetaDataItem",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"my-doodle-art-002\",\r\n    \"image\": \"url/to/my-doodle-art-002\",\r\n    \"description\": \"my creative doodle art 002\",\r\n    \"title\": \"DoodleCreative002\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}mintableitem/f4bd8240-a4a7-47d0-a2c7-9ba23624d085",
+							"host": [
+								"{{url}}mintableitem"
+							],
+							"path": [
+								"f4bd8240-a4a7-47d0-a2c7-9ba23624d085"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "206"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 28 Jan 2024 09:51:17 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "5d7b7840-f160-4487-8c8d-226dd7c9975e"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "SPp_CEx_yQ0EYnQ="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-65b62393-5bf5663b512d155e0b2b8904;Sampled=0;lineage=f71ced3f:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "SIN2-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "zXUxaKt25Z8s_GwqoaHLVQD7I8B_iE3i94ee_X6twOunSxeuTLh5sg=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mintableItem\": {\n        \"description\": \"my creative doodle art 002\",\n        \"image\": \"url/to/my-doodle-art-002\",\n        \"name\": \"my-doodle-art-002\",\n        \"updatedAt\": \"2024-01-28T09:51:17.768Z\"\n    },\n    \"id\": \"f4bd8240-a4a7-47d0-a2c7-9ba23624d085\"\n}"
+				}
+			]
+		}
+	]
+}
