@@ -11,8 +11,10 @@ const createItemHandler : ValidatedEventAPIGatewayProxyEvent<typeof schema> =
         const mintableItem = await mintableItemService.createItem({
             itemId: id,
             name: `${event.body.name}`,
-            image: `${event.body.email}`,
+            image: `${event.body.image}`,
             email: `${event.body.email}`,
+            description: `${event.body.description}`,
+            title: `${event.body.title}`,
             walletAddress: `${event.body.walletAddress}`,
         })
         return formatJSONResponse({
@@ -32,7 +34,10 @@ const mintItemHandler : ValidatedEventAPIGatewayProxyEvent<typeof schema> =
         const mintableItem = await mintableItemService.mintItem({
             itemId: `${event.body.itemId ?? null}`,
             name: `${event.body.name}`,
+            image: `${event.body.image}`,
             email: `${event.body.email}`,
+            description: `${event.body.description}`,
+            title: `${event.body.title}`,
             walletAddress: `${event.body.walletAddress}`,
         })
         return formatJSONResponse({

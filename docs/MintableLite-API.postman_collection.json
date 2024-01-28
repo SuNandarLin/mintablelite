@@ -29,7 +29,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"my-doodle-art\",\r\n    \"image\": \"url/to/my-doodle-art\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"name\": \"my-doodle-art-005\",\r\n    \"image\": \"url/to/my-doodle-art-005\",\r\n    \"description\": \"Art of Sea\",\r\n    \"title\": \"Is that real sea?\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -62,7 +62,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"my-doodle-art\",\r\n    \"image\": \"url/to/my-doodle-art\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"name\": \"my-doodle-art-005\",\r\n    \"image\": \"url/to/my-doodle-art-005\",\r\n    \"description\": \"Art of Sea\",\r\n    \"title\": \"Is that real sea?\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -89,7 +89,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "68"
+							"value": "223"
 						},
 						{
 							"key": "Connection",
@@ -97,19 +97,19 @@
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 28 Jan 2024 09:33:28 GMT"
+							"value": "Sun, 28 Jan 2024 16:27:42 GMT"
 						},
 						{
 							"key": "x-amzn-RequestId",
-							"value": "46745a7a-caaa-4990-9a23-8053defa8f87"
+							"value": "01d216e2-2c16-40e0-9aee-1c4571e50a9e"
 						},
 						{
 							"key": "x-amz-apigw-id",
-							"value": "SPnWKGH3SQ0EQDA="
+							"value": "SQkBqHQIyQ0EJfw="
 						},
 						{
 							"key": "X-Amzn-Trace-Id",
-							"value": "Root=1-65b61f5a-7a7abb2342178448671c6c1f;Sampled=0;lineage=29a83f35:0"
+							"value": "Root=1-65b68070-1896d66c69fce8e77fd71326;Sampled=0;lineage=29a83f35:0"
 						},
 						{
 							"key": "X-Cache",
@@ -117,7 +117,7 @@
 						},
 						{
 							"key": "Via",
-							"value": "1.1 17da3580ac51ce2ae5123bc46728adb2.cloudfront.net (CloudFront)"
+							"value": "1.1 09c63a510feb1b96fe87d2cfe41d34ae.cloudfront.net (CloudFront)"
 						},
 						{
 							"key": "X-Amz-Cf-Pop",
@@ -125,11 +125,11 @@
 						},
 						{
 							"key": "X-Amz-Cf-Id",
-							"value": "PvIfkqjuZ4A9uRt2e_e8dEwW0h2T6KuoAs2UEE0F9lIE2ZBj7DW6eg=="
+							"value": "mrZJAyrMbNwbcScrhSzdswytdMIcErxnDxgbPHLJI9P8Y_8dD7G6lw=="
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"mintableItem\": {\n        \"message\": \"Success creating and minting the item\"\n    }\n}"
+					"body": "{\n    \"mintableItem\": {\n        \"message\": \"Success creating and minting the item\",\n        \"MintableItem\": {\n            \"itemId\": \"cd0d4721-3330-4e3b-9eec-6fb0fe703c7d\",\n            \"tokenId\": \"61567771252793809372274542839126069677458383736451995237608328856436966045456\"\n        }\n    }\n}"
 				}
 			]
 		},
@@ -150,7 +150,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"my-doodle-art-002\",\r\n    \"image\": \"url/to/my-doodle-art-002\",\r\n    \"description\": \"my creative doodle art\",\r\n    \"title\": \"DoodleCreative002\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"name\": \"my-doodle-art-013\",\r\n    \"image\": \"url/to/my-doodle-art-013\",\r\n    \"description\": \"Waves of doodle\",\r\n    \"title\": \"Doodle or Waves?\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -172,7 +172,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"my-doodle-art-002\",\r\n    \"image\": \"url/to/my-doodle-art-002\",\r\n    \"description\": \"my creative doodle art\",\r\n    \"title\": \"DoodleCreative002\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"name\": \"my-doodle-art-013\",\r\n    \"image\": \"url/to/my-doodle-art-013\",\r\n    \"description\": \"Waves of doodle\",\r\n    \"title\": \"Doodle or Waves?\",\r\n    \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\r\n    \"email\": \"hsunandar.linn98@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -196,7 +196,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "2"
+							"value": "363"
 						},
 						{
 							"key": "Connection",
@@ -204,19 +204,19 @@
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 28 Jan 2024 09:39:46 GMT"
+							"value": "Sun, 28 Jan 2024 17:10:53 GMT"
 						},
 						{
 							"key": "x-amzn-RequestId",
-							"value": "b0d7bddd-cfde-4586-9623-d678c2ae0b87"
+							"value": "aa33fbfa-ec54-4d79-b924-8b3a84432dda"
 						},
 						{
 							"key": "x-amz-apigw-id",
-							"value": "SPoTXEqwSQ0Ee9g="
+							"value": "SQqYhFduyQ0EW6w="
 						},
 						{
 							"key": "X-Amzn-Trace-Id",
-							"value": "Root=1-65b620e2-15f6310777d32a1828f88251;Sampled=0;lineage=462adae0:0"
+							"value": "Root=1-65b68a9c-337310a728819bfb58e856f8;Sampled=0;lineage=462adae0:0"
 						},
 						{
 							"key": "X-Cache",
@@ -224,7 +224,7 @@
 						},
 						{
 							"key": "Via",
-							"value": "1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net (CloudFront)"
+							"value": "1.1 73a569eafe77b39b17f3e8ef76c14c7c.cloudfront.net (CloudFront)"
 						},
 						{
 							"key": "X-Amz-Cf-Pop",
@@ -232,7 +232,7 @@
 						},
 						{
 							"key": "X-Amz-Cf-Id",
-							"value": "hYLV26GcuG8hs_vI0EmtaNFhutx_mWgX1vE49lxVa_cDV9Zer50bPA=="
+							"value": "5vei9TzErsAevnVoY7eqjug5joxRTP7xG-d2hiwlS4VLwy-2-GTeqw=="
 						}
 					],
 					"cookie": [
@@ -240,7 +240,7 @@
 							"expires": "Invalid Date"
 						}
 					],
-					"body": "{}"
+					"body": "{\n    \"mintableItem\": {\n        \"itemId\": \"1d67cd13-c507-4871-b33e-81c36577b534\",\n        \"name\": \"my-doodle-art-013\",\n        \"image\": \"url/to/my-doodle-art-013\",\n        \"email\": \"hsunandar.linn98@gmail.com\",\n        \"description\": \"Waves of doodle\",\n        \"title\": \"Doodle or Waves?\",\n        \"walletAddress\": \"0x881e1fa62658a40796550227684d703e4379212f\",\n        \"createdAt\": \"2024-01-28T17:10:53.430Z\",\n        \"updatedAt\": \"2024-01-28T17:10:53.430Z\"\n    }\n}"
 				}
 			]
 		},
@@ -261,7 +261,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"itemId\": \"f4bd8240-a4a7-47d0-a2c7-9ba23624d085\"\r\n}",
+					"raw": "{\r\n    \"itemId\": \"1d67cd13-c507-4871-b33e-81c36577b534\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -287,7 +287,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"itemId\": \"f4bd8240-a4a7-47d0-a2c7-9ba23624d085\"\r\n}",
+							"raw": "{\r\n    \"itemId\": \"1d67cd13-c507-4871-b33e-81c36577b534\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -314,7 +314,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "55"
+							"value": "223"
 						},
 						{
 							"key": "Connection",
@@ -322,19 +322,19 @@
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 28 Jan 2024 09:45:24 GMT"
+							"value": "Sun, 28 Jan 2024 17:11:52 GMT"
 						},
 						{
 							"key": "x-amzn-RequestId",
-							"value": "99f6aa91-c98e-409f-aa52-cd2852935876"
+							"value": "8ed97953-71a4-41e7-9b3f-6281dd4d7d39"
 						},
 						{
 							"key": "x-amz-apigw-id",
-							"value": "SPpF-Eb8SQ0EX6w="
+							"value": "SQqfvG_EyQ0EYmg="
 						},
 						{
 							"key": "X-Amzn-Trace-Id",
-							"value": "Root=1-65b62225-3f76434b0ae71fa85176cbed;Sampled=0;lineage=29a83f35:0"
+							"value": "Root=1-65b68aca-098b537578d2050408ece185;Sampled=0;lineage=29a83f35:0"
 						},
 						{
 							"key": "X-Cache",
@@ -342,7 +342,7 @@
 						},
 						{
 							"key": "Via",
-							"value": "1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net (CloudFront)"
+							"value": "1.1 73a569eafe77b39b17f3e8ef76c14c7c.cloudfront.net (CloudFront)"
 						},
 						{
 							"key": "X-Amz-Cf-Pop",
@@ -350,11 +350,11 @@
 						},
 						{
 							"key": "X-Amz-Cf-Id",
-							"value": "2-bSRuTfe_I3UDCzbEXntZWgCirmZBOx4F1byfiucnZBlxsTyKG2Wg=="
+							"value": "C-5JnDlVIpWqn7IQc3klpc51uMUEQQdcAqhVd3p4aY6FROth-w5Ddg=="
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"mintableItem\": {\n        \"message\": \"Success minting the item\"\n    }\n}"
+					"body": "{\n    \"mintableItem\": {\n        \"message\": \"Success creating and minting the item\",\n        \"MintableItem\": {\n            \"itemId\": \"1d67cd13-c507-4871-b33e-81c36577b534\",\n            \"tokenId\": \"61567771252793809372274542839126069677458383736447634857052997282163035050036\"\n        }\n    }\n}"
 				}
 			]
 		},

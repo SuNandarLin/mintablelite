@@ -1,0 +1,425 @@
+openapi: 3.0.0
+info:
+  title: MintableLite-API
+  version: 1.0.0
+servers:
+  - url: http://{{url}}mintableitem
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /mint:
+    post:
+      tags:
+        - default
+      summary: MintItem
+      description: Mint an existing item and save generated token
+      requestBody:
+        content:
+          application/json:
+              example:
+                itemId: 1d67cd13-c507-4871-b33e-81c36577b534
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            Content-Length:
+              schema:
+                type: integer
+                example: '223'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Sun, 28 Jan 2024 17:11:52 GMT
+            x-amzn-RequestId:
+              schema:
+                type: string
+                example: 8ed97953-71a4-41e7-9b3f-6281dd4d7d39
+            x-amz-apigw-id:
+              schema:
+                type: string
+                example: SQqfvG_EyQ0EYmg=
+            X-Amzn-Trace-Id:
+              schema:
+                type: string
+                example: >-
+                  Root=1-65b68aca-098b537578d2050408ece185;Sampled=0;lineage=29a83f35:0
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: string
+                example: >-
+                  1.1 73a569eafe77b39b17f3e8ef76c14c7c.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: SIN2-P2
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: C-5JnDlVIpWqn7IQc3klpc51uMUEQQdcAqhVd3p4aY6FROth-w5Ddg==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                mintableItem:
+                  message: Success creating and minting the item
+                  MintableItem:
+                    itemId: 1d67cd13-c507-4871-b33e-81c36577b534
+                    tokenId: >-
+                      61567771252793809372274542839126069677458383736447634857052997282163035050036
+  /:
+    post:
+      tags:
+        - default
+      summary: CreateItem
+      requestBody:
+        content:
+          application/json:
+              example:
+                name: my-doodle-art-013
+                image: url/to/my-doodle-art-013
+                description: Waves of doodle
+                title: Doodle or Waves?
+                walletAddress: '0x881e1fa62658a40796550227684d703e4379212f'
+                email: hsunandar.linn98@gmail.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            Content-Length:
+              schema:
+                type: integer
+                example: '363'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Sun, 28 Jan 2024 17:10:53 GMT
+            x-amzn-RequestId:
+              schema:
+                type: string
+                example: aa33fbfa-ec54-4d79-b924-8b3a84432dda
+            x-amz-apigw-id:
+              schema:
+                type: string
+                example: SQqYhFduyQ0EW6w=
+            X-Amzn-Trace-Id:
+              schema:
+                type: string
+                example: >-
+                  Root=1-65b68a9c-337310a728819bfb58e856f8;Sampled=0;lineage=462adae0:0
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: string
+                example: >-
+                  1.1 73a569eafe77b39b17f3e8ef76c14c7c.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: SIN2-P2
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: 5vei9TzErsAevnVoY7eqjug5joxRTP7xG-d2hiwlS4VLwy-2-GTeqw==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                mintableItem:
+                  itemId: 1d67cd13-c507-4871-b33e-81c36577b534
+                  name: my-doodle-art-013
+                  image: url/to/my-doodle-art-013
+                  email: hsunandar.linn98@gmail.com
+                  description: Waves of doodle
+                  title: Doodle or Waves?
+                  walletAddress: '0x881e1fa62658a40796550227684d703e4379212f'
+                  createdAt: '2024-01-28T17:10:53.430Z'
+                  updatedAt: '2024-01-28T17:10:53.430Z'
+    get:
+      tags:
+        - default
+      summary: ListAllMintedItems
+      description: Retrieve all minted items
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            Content-Length:
+              schema:
+                type: integer
+                example: '485'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Sun, 28 Jan 2024 09:48:27 GMT
+            x-amzn-RequestId:
+              schema:
+                type: string
+                example: de168363-fd68-4947-8d5f-76b1dac7e2b2
+            Content-Encoding:
+              schema:
+                type: string
+                example: gzip
+            x-amz-apigw-id:
+              schema:
+                type: string
+                example: SPpksH5MyQ0EYmg=
+            X-Amzn-Trace-Id:
+              schema:
+                type: string
+                example: >-
+                  Root=1-65b622ea-2082119268b0e50648c5332f;Sampled=0;lineage=9fb1de06:0
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: string
+                example: >-
+                  1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: SIN2-P2
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: 9oSIaIjmOBZmImEkfCekzfdCHdj77HkZ7QGyFrjR79wy-63lGo_vEQ==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                mintableItems:
+                  - tokenId: >-
+                      61567771252793809372274542839126069677458383736428098239844083095822846166889
+                    image: url/to/my-doodle
+                    updatedAt: '2024-01-28T07:33:11.852Z'
+                    itemId: e1a25ca0-375e-4530-bbe9-e0aff8699c88
+                    description: Creative doodle
+                    email: hsunandar.linn98@gmail.com
+                    name: my-doodle
+                    walletAddress: '0x881e1fa62658a40796550227684d703e4379212f'
+                  - tokenId: >-
+                      61567771252793809372274542839126069677458383736438397470241583267714781222420
+                    updatedAt: '2024-01-28T09:33:28.484Z'
+                    createdAt: '2024-01-28T09:33:28.484Z'
+                    itemId: 0f6b2ace-4bf2-4483-acca-af744174e89a
+                    email: hsunandar.linn98@gmail.com
+                    name: my-doodle-art
+                    walletAddress: '0x881e1fa62658a40796550227684d703e4379212f'
+                  - tokenId: >-
+                      61567771252793809372274542839126069677458383736449235305086685358013478803299
+                    updatedAt: '2024-01-28T09:22:30.038Z'
+                    createdAt: '2024-01-28T09:22:30.038Z'
+                    itemId: bdb1ec4b-d766-404e-9c98-6ae4fc965333
+                    email: hsunandar.linn98@gmail.com
+                    name: my-doodle-2
+                    walletAddress: '0x881e1fa62658a40796550227684d703e4379212f'
+                  - tokenId: >-
+                      61567771252793809372274542839126069677458383736457437594407837511726795945328
+                    image: hsunandar.linn98@gmail.com
+                    updatedAt: '2024-01-28T09:45:24.023Z'
+                    itemId: f4bd8240-a4a7-47d0-a2c7-9ba23624d085
+                    email: hsunandar.linn98@gmail.com
+                    name: my-doodle-art-002
+                    walletAddress: '0x881e1fa62658a40796550227684d703e4379212f'
+  /id:
+    get:
+      tags:
+        - default
+      summary: GetDetailsOfItem
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            Content-Length:
+              schema:
+                type: integer
+                example: '401'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Sun, 28 Jan 2024 09:47:16 GMT
+            x-amzn-RequestId:
+              schema:
+                type: string
+                example: 5a592185-a181-453a-8ea5-43a6f9ede424
+            x-amz-apigw-id:
+              schema:
+                type: string
+                example: SPpZpHuZSQ0EX6w=
+            X-Amzn-Trace-Id:
+              schema:
+                type: string
+                example: >-
+                  Root=1-65b622a3-6c4210855471889f794f8c29;Sampled=0;lineage=c957611d:0
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: string
+                example: >-
+                  1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: SIN2-P2
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: SAHJTOajT9NycyK8PaNbiNEj16NP4Bk8KBYn6PWIs3Az1-HetVA8UQ==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                mintableItem:
+                  tokenId: >-
+                    61567771252793809372274542839126069677458383736457437594407837511726795945328
+                  image: hsunandar.linn98@gmail.com
+                  updatedAt: '2024-01-28T09:45:24.023Z'
+                  itemId: f4bd8240-a4a7-47d0-a2c7-9ba23624d085
+                  email: hsunandar.linn98@gmail.com
+                  name: my-doodle-art-002
+                  walletAddress: '0x881e1fa62658a40796550227684d703e4379212f'
+                id: f4bd8240-a4a7-47d0-a2c7-9ba23624d085
+    put:
+      tags:
+        - default
+      summary: UpdateMetaDataItem
+      description: >-
+        Checking if the token is authorized to the user and if it is authorized,
+        meta data is updated
+      requestBody:
+        content:
+          application/json:
+              example:
+                name: my-doodle-art-002
+                image: url/to/my-doodle-art-002
+                description: my creative doodle art 002
+                title: DoodleCreative002
+                walletAddress: '0x881e1fa62658a40796550227684d703e4379212f'
+                email: hsunandar.linn98@gmail.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            Content-Length:
+              schema:
+                type: integer
+                example: '206'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Date:
+              schema:
+                type: string
+                example: Sun, 28 Jan 2024 09:51:17 GMT
+            x-amzn-RequestId:
+              schema:
+                type: string
+                example: 5d7b7840-f160-4487-8c8d-226dd7c9975e
+            x-amz-apigw-id:
+              schema:
+                type: string
+                example: SPp_CEx_yQ0EYnQ=
+            X-Amzn-Trace-Id:
+              schema:
+                type: string
+                example: >-
+                  Root=1-65b62393-5bf5663b512d155e0b2b8904;Sampled=0;lineage=f71ced3f:0
+            X-Cache:
+              schema:
+                type: string
+                example: Miss from cloudfront
+            Via:
+              schema:
+                type: string
+                example: >-
+                  1.1 3c5649f7d49e8f5b916e18a72b919074.cloudfront.net
+                  (CloudFront)
+            X-Amz-Cf-Pop:
+              schema:
+                type: string
+                example: SIN2-P2
+            X-Amz-Cf-Id:
+              schema:
+                type: string
+                example: zXUxaKt25Z8s_GwqoaHLVQD7I8B_iE3i94ee_X6twOunSxeuTLh5sg==
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                mintableItem:
+                  description: my creative doodle art 002
+                  image: url/to/my-doodle-art-002
+                  name: my-doodle-art-002
+                  updatedAt: '2024-01-28T09:51:17.768Z'
+                id: f4bd8240-a4a7-47d0-a2c7-9ba23624d085

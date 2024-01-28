@@ -19,6 +19,8 @@ export interface MintItemRequest {
     email?: string
     name?: string
     image?: string
+    description?: string
+    title?: string
     walletAddress?: string
 }
 
@@ -61,5 +63,9 @@ export interface AuthorizeResponse {
 }
 
 export interface SuccessMessage {
-    message: string
+    message: string,
+    MintableItem: {
+        itemId: string,
+        tokenId: string,
+    } 
 }

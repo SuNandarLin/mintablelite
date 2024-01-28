@@ -53,4 +53,6 @@ To be able to execute API secured with Cognito, a Cognito User is necessary to a
     ```
 4. COPY the idToken from result and use as a Bearer Token to authenticate in executing secure APIs
 
-5. Execute APIs referring to the [API documentation](/mintablelite-api\docs\MintableLite-API.postman_collection.json)
+5. Execute APIs referring to the 
+- [Postman API documentation](/mintablelite-api\docs\MintableLite-API.postman_collection.json)
+- [OpenAPI Specification](/mintablelite-api/docs/mintablelite_openapi.yml)

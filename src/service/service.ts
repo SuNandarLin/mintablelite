@@ -10,17 +10,23 @@ export default class MintableItemService {
     constructor(private docClient: DocumentClient) { }
 
     async createItem(mintableItem: MintableItem): Promise<MintableItem> {
-        const mintedItem = await this.docClient.put({
+        const id = v4();
+        mintableItem.itemId = id;
+        mintableItem.createdAt = new Date().toISOString();
+        mintableItem.updatedAt = new Date().toISOString();
+
+        await this.docClient.put({
             TableName: this.Tablename,
             Item: mintableItem
         }).promise()
-        return mintedItem.Attributes as MintableItem;
+
+        return mintableItem as MintableItem;
     }
 
     async mintItem(request: MintItemRequest): Promise<SuccessMessage> {
         try{
             let item: MintRequest;
-            if((request.itemId) && (request.itemId !== 'null')){
+            if((request.itemId) && (request.itemId !== 'null')){ //Minting an existing item
                 const premintItem: MintableItem = await this.getItemDetails(request.itemId);
                 item = {
                     email: premintItem.email,
@@ -51,9 +57,15 @@ export default class MintableItemService {
                         })
                         .promise();
     
-                    return { message: "Success minting the item"};
+                    return { 
+                        message: "Success creating and minting the item",
+                        MintableItem: {
+                           itemId: premintItem.itemId,
+                           tokenId: mintResponse.data.token_id 
+                        }
+                    };
                 }   
-            }else{
+            }else{ //Minting and creating a new item
                 item = {
                     email: request.email,
                     metadata: {
@@ -69,6 +81,8 @@ export default class MintableItemService {
                         itemId: id,
                         name: request.name,
                         image: request.image,
+                        description: request.description,
+                        title: request.title,
                         email: request.email,
                         tokenId: mintResponse.data.token_id,
                         walletAddress: request.walletAddress,
@@ -79,7 +93,13 @@ export default class MintableItemService {
                         TableName: this.Tablename,
                         Item: mintableItem
                     }).promise();
-                    return { message: "Success creating and minting the item"};
+                    return { 
+                        message: "Success creating and minting the item",
+                        MintableItem: {
+                           itemId: id,
+                           tokenId: mintResponse.data.token_id 
+                        }
+                    };
                 }
             }
         }catch(e){

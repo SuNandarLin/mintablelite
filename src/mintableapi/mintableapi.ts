@@ -4,7 +4,6 @@ import { AuthorizeRequest, AuthorizeResponse, MintRequest, MintResponse } from '
 const minologyURL = process.env.MINOLOGY_BASE_URL + process.env.MINOLOGY_PROJECT_ID ;
 
 export const mint = async (request: MintRequest): Promise<MintResponse> => {
-    console.log(JSON.stringify(request));
     try{
         const responseData = await fetch(
             (minologyURL+"/mint"),
@@ -18,7 +17,6 @@ export const mint = async (request: MintRequest): Promise<MintResponse> => {
             }
         );
         const response = await responseData.json();
-        console.log(response);
         return response as MintResponse;
 
     }catch(e){
@@ -28,7 +26,6 @@ export const mint = async (request: MintRequest): Promise<MintResponse> => {
 };
 
 export const authorize = async (request: AuthorizeRequest): Promise<AuthorizeResponse> => {
-    console.log(JSON.stringify(request));
     try{
         const responseData = await fetch(
             (minologyURL+"/authorize"),
@@ -42,7 +39,6 @@ export const authorize = async (request: AuthorizeRequest): Promise<AuthorizeRes
             }
         );
         const response = await responseData.json();
-        console.log(response);
         return response as AuthorizeResponse;
 
     }catch(e){
