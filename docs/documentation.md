@@ -1,7 +1,7 @@
 # MintableLite Project Documentation
 
 ## Architecture
-[Architecture](mintablelite-api\docs\architecture.md)
+[Architecture](./architecture.md)
 
 ## Getting Started
-[GettingStarted](mintablelite-api\README.md)
+[GettingStarted](../README.md)

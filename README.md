@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-It is essential to possess an AWS account for the successful setup of the project. Additionally, please ensure that your AWS Identity and Access Management (IAM) account is allowed with the requisite permissions for DynamoDB, S3, Lambda Functions, API Gateway, Cognito, and CloudFormation. For more [documentation..](mintablelite-api\docs\documentation.md)
+It is essential to possess an AWS account for the successful setup of the project. Additionally, please ensure that your AWS Identity and Access Management (IAM) account is allowed with the requisite permissions for DynamoDB, S3, Lambda Functions, API Gateway, Cognito, and CloudFormation. For more [documentation..](.\docs\documentation.md)
 
 ### Install & Setup AWS resources
 
@@ -54,5 +54,5 @@ To be able to execute API secured with Cognito, a Cognito User is necessary to a
 4. COPY the idToken from result and use as a Bearer Token to authenticate in executing secure APIs
 
 5. Execute APIs referring to the 
-- [Postman API documentation](/mintablelite-api\docs\MintableLite-API.postman_collection.json)
-- [OpenAPI Specification](/mintablelite-api/docs/mintablelite_openapi.yml)
+- [Postman API documentation](./docs/MintableLite-API.postman_collection.json)
+- [OpenAPI Specification](./docs/mintablelite_openapi.yml)
