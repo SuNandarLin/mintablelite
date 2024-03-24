@@ -17,10 +17,6 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
-      MINOLOGY_BASE_URL: 'https://api.mintology.dev/v1/',
-      MINOLOGY_API_KEY: 'ZDljMmVmZDAtYjk0NC0xMWVlLTk1MzItYTU4NmZiOTJmNmFmOiQyYSQxMCRLcXhzRGpsMm9LOUpCcTR2c3RJLzNPL0xuWkwzR1U2NmFoVkhVV0drQXJtbTlVTGtJWnFUbQ',
-      MINOLOGY_PROJECT_ID: 'd04ecbc0-bced-11ee-984e-533354039427',
-      DYNAMODB_TABLE_NAME: 'MintLiteTable',
     },
     iam: {
       role: {
